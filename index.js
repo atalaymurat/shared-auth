@@ -1,5 +1,5 @@
 const { createToken, verifyToken } = require("./token");
-const authenticate = require("./middleware");
+const { authenticate } = require("./middleware");
 const verifyFirebaseToken = require("./verifyFirebaseToken");
 
 module.exports = {
