@@ -12,6 +12,7 @@ const authenticate = () => (req, res, next) => {
     }
 
     const token = authHeader.split(" ")[1];
+    console.log("TOKEN TO VERIFY FROM HEADER", token)
     const decoded = verifyToken(token);
 
     req.user = decoded;
