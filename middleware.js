@@ -12,12 +12,7 @@ const authenticate = () => (req, res, next) => {
     }
 
     const token = authHeader.split(" ")[1];
-    console.log(
-      "SHARED-AUTH PACKAGE authorization mid token bearer heder:",
-      token
-    );
     const decoded = verifyToken(token);
-    console.log("Decoded token:", decoded);
 
     req.user = decoded;
 
