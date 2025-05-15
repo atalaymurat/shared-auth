@@ -14,8 +14,11 @@ const createToken = (user) => {
 };
 
 const verifyToken = (token) => {
+  console.log("Verify Token", token);
   try {
-    return jwt.verify(token, process.env.JWT_SECRET);
+    const res = jwt.verify(token, process.env.JWT_SECRET);
+    console.log("Decoded token:", res);
+    return res
   } catch (err) {
     console.error("Token verification error:", err?.message);
     throw err;
