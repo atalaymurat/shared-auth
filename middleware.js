@@ -1,6 +1,7 @@
 const { verifyToken } = require("./token");
 
 const authenticate = () => (req, res, next) => {
+  console.log("✅ AUTHENTICATE MIDDLEWARE ÇALIŞTI");
   try {
     const authHeader = req.headers.authorization;
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
