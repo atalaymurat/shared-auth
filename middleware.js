@@ -1,12 +1,13 @@
 const authenticate = () => (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
-    console.log("Authorization Header SHARED-AUTH PACKAGE:", authHeader);
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      return res.status(401).json({ error: "Unauthorized" });
+      console.log("No authHeader or authHeader does not start with Bearer");
+      return res.status(401).json({ error: "Unauthorized No Authheader or Not Start with Bearer" });
     }
 
     const token = authHeader.split(" ")[1];
+    console.log("SHARED-AUTH PACKAGE authorization mid token bearer heder:", token);
     const decoded = verifyToken(token);
     console.log("Decoded token:", decoded);
 
